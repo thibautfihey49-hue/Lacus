@@ -1,0 +1,29 @@
+name: Build MEGA Sync Auto
+on:
+  push: { branches: [main] }
+  workflow_dispatch: {}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # ⬇️ Initialiser le wrapper Gradle (crée gradle-wrapper.jar)
+      - name: Setup Gradle Wrapper
+        run: |
+          chmod +x gradlew
+          ./gradlew wrapper --gradle-version 8.2
+
+      - uses: actions/setup-java@v4
+        with: { java-version: '17', distribution: 'temurin', cache: 'gradle' }
+
+      - uses: android-actions/setup-android@v3
+
+      - name: Accept Android Licenses
+        run: yes | sdkmanager --licenses
+
+      - name: Build APK
+        run: ./gradlew assembleDebug --no-daemon
+
+      - uses: actions/upload-artifact@v4
+        with: { name: MEGA-Sync-Auto, path: app/build/outputs/apk/debug/app-debug.apk, retention-days: 30 }

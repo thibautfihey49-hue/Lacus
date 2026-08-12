@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="☁️ MEGA Sync Auto"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="32dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email MEGA :"
+        android:textSize="14sp"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/megaEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ton@email.com"
+        android:inputType="textEmailAddress"
+        android:padding="12dp"
+        android:background="#F5F5F5"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mot de passe MEGA :"
+        android:textSize="14sp"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/megaPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="••••••••"
+        android:inputType="textPassword"
+        android:padding="12dp"
+        android:background="#F5F5F5"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🔑 Se connecter à MEGA"
+        android:padding="14dp"
+        android:background="#D9272E"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="24dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dossier à synchroniser :"
+        android:textSize="14sp"
+        android:layout_marginBottom="8dp"/>
+
+    <Button
+        android:id="@+id/folderBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📁 Choisir un dossier"
+        android:padding="12dp"
+        android:background="#666666"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/folderPath"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Aucun dossier sélectionné"
+        android:textSize="13sp"
+        android:padding="10dp"
+        android:background="#EEEEEE"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fréquence de synchronisation :"
+        android:textSize="14sp"
+        android:layout_marginBottom="8dp"/>
+
+    <Spinner
+        android:id="@+id/intervalSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"/>
+
+    <Button
+        android:id="@+id/startBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="▶️ Démarrer la synchronisation"
+        android:textSize="16sp"
+        android:padding="18dp"
+        android:background="#4CAF50"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="✅ Prêt — Connecte-toi et choisis un dossier"
+        android:textSize="14sp"
+        android:padding="16dp"
+        android:background="#F5F5F5"
+        android:gravity="top"/>
+
+</LinearLayout>
