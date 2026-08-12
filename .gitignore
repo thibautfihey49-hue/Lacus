@@ -6,5 +6,4 @@
 .cxx/
 local.properties
 app/build/
-gradle-app.setting
 !gradle-wrapper.jar
