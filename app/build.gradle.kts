@@ -32,5 +32,4 @@ android {
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.20")
-    # ✅ PLUS de SDK MEGA — on utilise le partage natif
 }

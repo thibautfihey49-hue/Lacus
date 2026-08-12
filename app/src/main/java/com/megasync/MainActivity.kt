@@ -37,7 +37,7 @@ class MainActivity : Activity() {
 
         uploadBtn.setOnClickListener {
             if (selectedFolderUri == null) {
-                statusText.text = "⚠️ Choisis un dossier d'abord"
+                statusText.text = "Choisis un dossier d'abord"
                 return@setOnClickListener
             }
             uploadFolderToMEGA()
@@ -55,7 +55,7 @@ class MainActivity : Activity() {
         val filesToShare = mutableListOf<Uri>()
 
         cursor?.use {
-            statusText.text = "📂 ${it.count} fichiers trouvés"
+            statusText.text = "${it.count} fichiers trouves"
             while (it.moveToNext()) {
                 val docId = it.getString(it.getColumnIndexOrThrow(DocumentsContract.Document.COLUMN_DOCUMENT_ID))
                 val docUri = DocumentsContract.buildDocumentUriUsingTree(uri, docId)
@@ -65,11 +65,11 @@ class MainActivity : Activity() {
         }
 
         if (filesToShare.isEmpty()) {
-            statusText.text = "⚠️ Aucun fichier dans ce dossier"
+            statusText.text = "Aucun fichier dans ce dossier"
             return
         }
 
-        statusText.text = "📤 Ouverture de MEGA pour l'envoi..."
+        statusText.text = "Ouverture de MEGA..."
 
         if (filesToShare.size == 1) {
             val shareIntent = Intent(Intent.ACTION_SEND)
@@ -91,8 +91,8 @@ class MainActivity : Activity() {
         if (requestCode == PICK_FOLDER && resultCode == RESULT_OK && data != null) {
             selectedFolderUri = data.data
             contentResolver.takePersistableUriPermission(data.data!!, Intent.FLAG_GRANT_READ_URI_PERMISSION)
-            folderPath.text = "✅ Dossier sélectionné"
-            statusText.text = "✅ Prêt ! Clique sur Envoyer"
+            folderPath.text = "Dossier selectionne"
+            statusText.text = "Pret ! Clique sur Envoyer"
         }
     }
 }
